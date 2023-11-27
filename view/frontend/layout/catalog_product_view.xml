@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="head.additional">
+            <block class="Rezolve\InstantCheckout\Block\HeaderCode"
+                   name="rezolve.ic-button.header-code"
+                   template="Rezolve_InstantCheckout::header_code.phtml"
+                   after="-">
+                <arguments>
+                    <argument name="button_page_type" xsi:type="const">Rezolve\InstantCheckout\Model\Config::BUTTON_PAGE_TYPE_DETAIL</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="product.info.addtocart">
+            <block class="Rezolve\InstantCheckout\Block\ProductDetail\Button"
+                   name="product-info-addtocart-rezolve-ic-button"
+                   template="Rezolve_InstantCheckout::product/ic_button.phtml" before="-">
+            </block>
+        </referenceBlock>
+        <referenceBlock name="product.info.addtocart.additional">
+            <block class="Rezolve\InstantCheckout\Block\ProductDetail\Button"
+                   name="product-info-addtocart-additional-rezolve-ic-button"
+                   template="Rezolve_InstantCheckout::product/ic_button.phtml" before="-">
+            </block>
+        </referenceBlock>
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Text" name="rezolve.ic-button.footer-code"
+                   ifconfig="rezolve_ic_button/ic_button_on_product_page/enabled">
+                <action method="setText">
+                    <argument name="text" xsi:type="string"><![CDATA[<rezolve-instant-checkout-modal-view></rezolve-instant-checkout-modal-view>]]></argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

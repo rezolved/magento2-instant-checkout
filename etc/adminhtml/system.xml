@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="rezolve" translate="label" sortOrder="800">
+            <label>Rezolve</label>
+        </tab>
+        <section id="rezolve_ic_button" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Instant Checkout</label>
+            <tab>rezolve</tab>
+            <resource>Rezolve_InstantCheckout::config</resource>
+
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>General</label>
+                <field id="last_update" translate="label" type="label" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Installed Version</label>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\InstalledVersionField</frontend_model>
+                </field>
+                <field id="merchant_id" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant ID</label>
+                </field>
+            </group>
+            <group id="ic_button_on_product_page" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Product Detail Page</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="button_width" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Width</label>
+                    <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonWidth</source_model>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
+                    </depends>
+                    <comment>The horizontal size of the button.</comment>
+                </field>
+                <field id="button_custom_width" translate="label comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Custom Width</label>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_page/button_width">custom-width</field>
+                    </depends>
+                    <comment>Must be a number(s). This is inserted into the button in a style="width:npx" parameter. "n" is value.</comment>
+                </field>
+                <field id="button_corners" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Corners</label>
+                    <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonCorners</source_model>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
+                    </depends>
+                    <comment>The style of the corners.</comment>
+                </field>
+                <field id="button_colour" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Colour</label>
+                    <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonColour</source_model>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
+                    </depends>
+                    <comment>The colour scheme of the button.</comment>
+                </field>
+                <field id="button_height" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Height</label>
+                    <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonHeight</source_model>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
+                    </depends>
+                    <comment>The vertical size of the button.</comment>
+                </field>
+
+                <field id="button_style" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Button Style</label>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
+                    </depends>
+                    <comment>The Button Style value controls the actual button</comment>
+                </field>
+                <field id="image_style" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Image Style</label>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
+                    </depends>
+                    <comment>The Image Style value controls the appearance of the ‘BUY NOW’ image label.</comment>
+                </field>
+            </group>
+            <group id="ic_button_on_product_listing" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Product Listing Page</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="button_width" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Width</label>
+                    <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonWidth</source_model>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
+                    </depends>
+                    <comment>The horizontal size of the button.</comment>
+                </field>
+                <field id="button_custom_width" translate="label comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Custom Width</label>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_listing/button_width">custom-width</field>
+                    </depends>
+                    <comment>Must be a number(s). This is inserted into the button in a style="width:npx" parameter. "n" is value.</comment>
+                </field>
+                <field id="button_corners" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Corners</label>
+                    <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonCorners</source_model>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
+                    </depends>
+                    <comment>The style of the corners.</comment>
+                </field>
+                <field id="button_colour" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Colour</label>
+                    <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonColour</source_model>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
+                    </depends>
+                    <comment>The colour scheme of the button.</comment>
+                </field>
+                <field id="button_height" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Height</label>
+                    <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonHeight</source_model>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
+                    </depends>
+                    <comment>The vertical size of the button.</comment>
+                </field>
+
+                <field id="button_style" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Button Style</label>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
+                    </depends>
+                    <comment>The Button Style value controls the actual button</comment>
+                </field>
+                <field id="image_style" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Image Style</label>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
+                    </depends>
+                    <comment>The Image Style value controls the appearance of the ‘BUY NOW’ image label.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

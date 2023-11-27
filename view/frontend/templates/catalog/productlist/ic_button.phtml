@@ -1,0 +1,14 @@
+<?php  /** @var \Rezolve\InstantCheckout\Block\ProductListing\View $block */ ?>
+<?php if ($block->isProductListingEnabled() && $block->isAllowedProductType() && !empty($block->getMerchantId())): ?>
+<div class="listing-rezolve-ic-button-wrapper <?php echo $block->getNameInLayout(); ?>">
+    <rezolve-instant-checkout-button
+        type="buy"
+        merchant="<?php echo $block->getMerchantId(); ?>"
+        external_id="<?php echo $block->getProductId(); ?>"
+        class="instant-button <?php echo $block->getListingClasses(); ?>"
+        button_style="<?php echo $block->getListingButtonStyle(); ?>"
+        image_style="<?php echo $block->getListingImageStyle(); ?>"
+        <?php echo $block->getListingCustomWidthStyleValue(); ?>
+    ></rezolve-instant-checkout-button>
+</div>
+<?php endif; ?>

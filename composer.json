@@ -1,0 +1,45 @@
+{
+  "name": "rezolved/magento2-instant-checkout",
+  "description": "Magento 2 Extension",
+  "type": "magento2-module",
+  "license": [
+    "proprietary"
+  ],
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Rezolve LLC",
+      "homepage": "https://www.rezolve.com"
+    }
+  ],
+  "require": {
+    "magento/module-customer": "^103.0.0",
+    "magento/module-checkout": "^100.4.0",
+    "magento/module-store": "^101.1.0",
+    "magento/module-backend": "^102.0.0",
+    "magento/module-ui": "^101.2.0",
+    "magento/framework": "^103.0.0"
+ },
+  "require-dev": {
+    "monolog/monolog": "^2.8"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Rezolve\\InstantCheckout\\": ""
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Rezolve\\InstantCheckout\\": "Test/Unit"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.magento.com/"
+    }
+  ]
+}
