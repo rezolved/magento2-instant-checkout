@@ -20,20 +20,12 @@
     "magento/module-ui": "^101.2.0",
     "magento/framework": "^103.0.0"
  },
-  "require-dev": {
-    "monolog/monolog": "^2.8"
-  },
   "autoload": {
     "files": [
       "registration.php"
     ],
     "psr-4": {
       "Rezolve\\InstantCheckout\\": ""
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Rezolve\\InstantCheckout\\": "Test/Unit"
     }
   },
   "repositories": [
