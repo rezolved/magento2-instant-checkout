@@ -26,11 +26,15 @@ class HeaderCode extends Template
     }
 
     /**
+     * The default environment value should be "production".
+     * Other values are only used for development, testing, etc.
+     *
      * @return string
      */
     public function getRezolveEnvironment(): string
     {
-        return 'development';
+        $env = getenv(Config::ENVIRONMENT_KEY);
+        return $env ?? 'production';
     }
 
     /**

@@ -12,6 +12,7 @@ use Magento\Store\Model\ScopeInterface;
  */
 class Config
 {
+    public const ENVIRONMENT_KEY = 'REZOLVE_M2_ENV';
     public const BUTTON_PAGE_TYPE_DETAIL = 'detail';
     public const BUTTON_PAGE_TYPE_LISTING = 'listing';
     public const REZOLVE_MERCHANT_ID_PATH = 'rezolve_ic_button/general/merchant_id';
