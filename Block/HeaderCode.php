@@ -34,7 +34,7 @@ class HeaderCode extends Template
     public function getRezolveEnvironment(): string
     {
         $env = getenv(Config::ENVIRONMENT_KEY);
-        return $env ?? 'production';
+        return !empty($env) ? $env : 'production';
     }
 
     /**
@@ -51,7 +51,7 @@ class HeaderCode extends Template
                 $url = 'https://instantweb-cdn.stg.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js';
                 break;
             case 'production':
-                echo 'https://instantweb-cdn.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js';
+                $url = 'https://instantweb-cdn.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js';
                 break;
             case 'demo':
                 $url = 'https://instantweb-cdn.demo.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js';
