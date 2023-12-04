@@ -21,7 +21,7 @@ class ButtonHeight implements OptionSourceInterface
         return [
             [
                 'value' => self::VALUE_HEIGHT_LARGE,
-                'label'=> __('Height Large')
+                'label' => __('Height Large')
             ],
             [
                 'value' => self::VALUE_HEIGHT_SMALL,

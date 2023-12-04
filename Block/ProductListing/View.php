@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace Rezolve\InstantCheckout\Block\ProductListing;
 
 use Magento\Catalog\Api\Data\ProductInterface;
-use Magento\Framework\Exception\NoSuchEntityException;
-use Rezolve\InstantCheckout\Model\Config;
-use Rezolve\InstantCheckout\Model\Config\Source\ButtonWidth;
 use Magento\Catalog\Block\Product\AwareInterface as ProductAwareInterface;
-use Magento\Store\Model\StoreManagerInterface;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context as TemplateContext;
+use Magento\Store\Model\StoreManagerInterface;
+use Rezolve\InstantCheckout\Model\ButtonStyles;
+use Rezolve\InstantCheckout\Model\Config;
+use Rezolve\InstantCheckout\Model\Config\Source\ButtonWidth;
 
 class View extends Template implements ProductAwareInterface
 {
@@ -22,15 +23,17 @@ class View extends Template implements ProductAwareInterface
 
     /**
      * @param TemplateContext $context
-     * @param Config $instantCheckoutConfig
-     * @param array $data
+     * @param Config          $instantCheckoutConfig
+     * @param ButtonStyles    $buttonStyles
+     * @param array           $data
      */
     public function __construct(
         protected TemplateContext $context,
         protected Config $instantCheckoutConfig,
+        protected ButtonStyles $buttonStyles,
         array $data = []
     ) {
-        parent::__construct($context,$data);
+        parent::__construct($context, $data);
     }
     /**
      * Set product
@@ -93,21 +96,12 @@ class View extends Template implements ProductAwareInterface
         $corners = $this->instantCheckoutConfig->getListingButtonCorners($this->getCurrentStoreId());
         $width = $this->instantCheckoutConfig->getListingButtonWidth($this->getCurrentStoreId());
 
-        $classes = [];
-        if (!empty($colour)) {
-            $classes[] = $colour;
-        }
-        if (!empty($height)) {
-            $classes[] = $height;
-        }
-        if (!empty($corners)) {
-            $classes[] = $corners;
-        }
-        if (!empty($width)) {
-            $classes[] = $width;
-        }
-
-        return implode(' ', $classes);
+        return $this->buttonStyles->prepareClasses(
+            $colour,
+            $height,
+            $corners,
+            $width
+        );
     }
 
     /**

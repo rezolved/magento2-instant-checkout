@@ -1,4 +1,7 @@
-<?php  /** @var \Rezolve\InstantCheckout\Block\HeaderCode $block */ ?>
+<?php
+/** @var \Rezolve\InstantCheckout\Block\HeaderCode $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
 <?php if ($block->isEnabled() && !empty($block->getScriptUrl())): ?>
-<script type="module" src="<?php echo $block->getScriptUrl(); ?>"></script>
+<script type="module" src="<?= $escaper->escapeUrl($block->getScriptUrl()); ?>"></script>
 <?php endif; ?>

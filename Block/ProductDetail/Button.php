@@ -9,6 +9,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Registry as CoreRegistry;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
+use Rezolve\InstantCheckout\Model\ButtonStyles;
 use Rezolve\InstantCheckout\Model\Config;
 use Rezolve\InstantCheckout\Model\Config\Source\ButtonWidth;
 
@@ -20,14 +21,16 @@ class Button extends Template
     protected ?ProductInterface $_product = null;
 
     /**
-     * @param Context $context
-     * @param Config $instantCheckoutConfig
+     * @param Context      $context
+     * @param Config       $instantCheckoutConfig
+     * @param ButtonStyles $buttonStyles
      * @param CoreRegistry $coreRegistry
-     * @param array $data
+     * @param array        $data
      */
     public function __construct(
         protected Context $context,
-        private Config $instantCheckoutConfig,
+        protected Config $instantCheckoutConfig,
+        protected ButtonStyles $buttonStyles,
         protected CoreRegistry $coreRegistry,
         array $data = []
     ) {
@@ -95,21 +98,12 @@ class Button extends Template
         $corners = $this->instantCheckoutConfig->getProductDetailButtonCorners($this->getCurrentStoreId());
         $width = $this->instantCheckoutConfig->getProductDetailButtonWidth($this->getCurrentStoreId());
 
-        $classes = [];
-        if (!empty($colour)) {
-            $classes[] = $colour;
-        }
-        if (!empty($height)) {
-            $classes[] = $height;
-        }
-        if (!empty($corners)) {
-            $classes[] = $corners;
-        }
-        if (!empty($width)) {
-            $classes[] = $width;
-        }
-
-        return implode(' ', $classes);
+        return $this->buttonStyles->prepareClasses(
+            $colour,
+            $height,
+            $corners,
+            $width
+        );
     }
 
     /**
