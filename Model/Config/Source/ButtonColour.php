@@ -9,7 +9,7 @@ use Magento\Framework\Data\OptionSourceInterface;
 class ButtonColour implements OptionSourceInterface
 {
     public const VALUE_DARK = 'dark';
-    public const VALUE_LIGHT= 'light';
+    public const VALUE_LIGHT = 'light';
 
     /**
      * Return array of options as value-label pairs
@@ -21,7 +21,7 @@ class ButtonColour implements OptionSourceInterface
         return [
             [
                 'value' => self::VALUE_DARK,
-                'label'=> __('Dark')
+                'label' => __('Dark')
             ],
             [
                 'value' => self::VALUE_LIGHT,

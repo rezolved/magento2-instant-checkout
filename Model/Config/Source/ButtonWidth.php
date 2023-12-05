@@ -9,8 +9,8 @@ use Magento\Framework\Data\OptionSourceInterface;
 class ButtonWidth implements OptionSourceInterface
 {
     public const VALUE_NARROW = 'narrow';
-    public const VALUE_WIDE= 'wide';
-    public const CUSTOM_WIDTH= 'custom-width';
+    public const VALUE_WIDE = 'wide';
+    public const CUSTOM_WIDTH = 'custom-width';
 
     /**
      * Return array of options as value-label pairs
@@ -22,7 +22,7 @@ class ButtonWidth implements OptionSourceInterface
         return [
             [
                 'value' => self::VALUE_NARROW,
-                'label'=> __('Narrow')
+                'label' => __('Narrow')
             ],
             [
                 'value' => self::VALUE_WIDE,

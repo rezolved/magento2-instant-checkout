@@ -64,20 +64,26 @@
                     </depends>
                     <comment>The vertical size of the button.</comment>
                 </field>
-
-                <field id="button_style" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
-                    <label>Button Style</label>
+                <field id="button_detail_preview" translate="label comment" type="button" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Preview Style</label>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonPreview</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
-                    <comment>The Button Style value controls the actual button</comment>
+                </field>
+                <field id="button_style" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Button Style CSS</label>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
+                    </depends>
+                    <comment>The Button Style CSS value controls the actual button. Example: height:13px;width:133px</comment>
                 </field>
                 <field id="image_style" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
-                    <label>Image Style</label>
+                    <label>Image Style CSS</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
-                    <comment>The Image Style value controls the appearance of the ‘BUY NOW’ image label.</comment>
+                    <comment>The Image Style CSS value controls the appearance of the ‘BUY NOW’ image label. Example: height:13px;width:133px</comment>
                 </field>
             </group>
             <group id="ic_button_on_product_listing" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
@@ -125,20 +131,26 @@
                     </depends>
                     <comment>The vertical size of the button.</comment>
                 </field>
-
-                <field id="button_style" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
-                    <label>Button Style</label>
+                <field id="button_listing_preview" translate="label comment" type="button" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Preview Style</label>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonPreview</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
                     </depends>
-                    <comment>The Button Style value controls the actual button</comment>
+                </field>
+                <field id="button_style" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Button Style CSS</label>
+                    <depends>
+                        <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
+                    </depends>
+                    <comment>The Button Style CSS value controls the actual button. Example: height:13px;width:133px</comment>
                 </field>
                 <field id="image_style" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
-                    <label>Image Style</label>
+                    <label>Image Style CSS</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
                     </depends>
-                    <comment>The Image Style value controls the appearance of the ‘BUY NOW’ image label.</comment>
+                    <comment>The Image Style CSS value controls the appearance of the ‘BUY NOW’ image label. Example: height:13px;width:133px</comment>
                 </field>
             </group>
         </section>

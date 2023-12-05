@@ -1,0 +1,83 @@
+.row-ic-button td.value {
+    max-width: 300px;
+    overflow-x: auto;
+}
+.row-ic-button .instant-button{
+    --ic-blue: #041f63;
+    --ic-white: #fff;
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    gap: 5px;
+    justify-content: center;
+    line-height: 21px;
+    text-align: center;
+    transition: all 0.5s ease 0s;
+    padding: 0;
+}
+.row-ic-button .instant-button.dark {
+    background: rgb(4, 31, 99);
+    border: 0;
+    color: #ffffff;
+}
+.row-ic-button .instant-button.light {
+    background: #ffffff;
+    border: 1px solid #041f63;
+    color: #041f63;
+}
+
+.row-ic-button .instant-button.corner-round {
+    border-radius: 3em;
+}
+.row-ic-button .instant-button.corner-rounded {
+    border-radius: 0.25em;
+}
+.row-ic-button .instant-button.corner-square {
+    border-radius: 0;
+}
+
+.row-ic-button .instant-button.height-large.narrow {
+    height: 42px;
+    min-width: 170px;
+    padding: 0 26px;
+}
+.row-ic-button .instant-button.height-large.wide {
+    height: 42px;
+    padding: 0 26px;
+    width: 100%;
+}
+.row-ic-button .instant-button.height-large.custom-width {
+    height: 42px;
+    padding: 0 26px;
+    width: inherit;
+}
+.row-ic-button .instant-button.height-small.narrow {
+    font-size: 16px;
+    height: 29px;
+    min-width: 140px;
+}
+.row-ic-button .instant-button.height-small.wide {
+    font-size: 16px;
+    height: 29px;
+    width: 100%;
+}
+.row-ic-button .instant-button.wide img,
+.row-ic-button .instant-button.custom-width img{
+    max-width: 97px;
+}
+.row-ic-button .instant-button.height-small.custom-width {
+    font-size: 16px;
+    height: 29px;
+    min-width: fit-content;
+}
+
+.row-ic-button .instant-button .mr-2 {
+    margin-right: 0.5rem;
+}
+.row-ic-button .instant-button .ml-2 {
+    margin-left: 0.5rem;
+}

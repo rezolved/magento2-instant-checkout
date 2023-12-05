@@ -22,14 +22,14 @@ class ButtonCorners implements OptionSourceInterface
         return [
             [
                 'value' => self::VALUE_CORNER_ROUND,
-                'label'=> __('Corner Round')
+                'label' => __('Round')
             ],
             [
                 'value' => self::VALUE_CORNER_ROUNDED,
-                'label' => __('Corner Rounded')],
+                'label' => __('Rounded Corners')],
             [
                 'value' => self::VALUE_CORNER_SQUARE,
-                'label' => __('Corner Square')
+                'label' => __('Square Corners')
             ]
         ];
     }

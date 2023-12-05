@@ -140,7 +140,6 @@ class Config
         return $this->isSetFlag(self::LISTING_PAGE_ACTIVE_PATH, $storeId);
     }
 
-
     /**
      * @param int $storeId
      * @return string
