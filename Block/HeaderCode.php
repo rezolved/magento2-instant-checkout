@@ -43,24 +43,13 @@ class HeaderCode extends Template
     public function getScriptUrl(): string
     {
         $env = $this->getRezolveEnvironment();
-        switch ($env) {
-            case 'development':
-                $url = 'https://instantweb-cdn.dev.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js';
-                break;
-            case 'staging':
-                $url = 'https://instantweb-cdn.stg.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js';
-                break;
-            case 'production':
-                $url = 'https://instantweb-cdn.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js';
-                break;
-            case 'demo':
-                $url = 'https://instantweb-cdn.demo.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js';
-                break;
-            default:
-                $url = '';
-        }
-
-        return $url ?? '';
+        return match ($env) {
+            'development' => 'https://instantweb-cdn.dev.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
+            'staging' => 'https://instantweb-cdn.stg.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
+            'production' => 'https://instantweb-cdn.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
+            'demo' => 'https://instantweb-cdn.demo.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
+            default => '',
+        };
     }
 
     /**
