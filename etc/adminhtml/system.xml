@@ -17,6 +17,8 @@
                 </field>
                 <field id="merchant_id" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Merchant ID</label>
+                    <validate>validate-length maximum-length-11 validate-digits validate-zero-or-greater</validate>
+                    <comment>Only digits greater than 0, no dots or comma. For example: 9561 or 132498765.</comment>
                 </field>
             </group>
             <group id="ic_button_on_product_page" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
@@ -38,7 +40,8 @@
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/button_width">custom-width</field>
                     </depends>
-                    <comment>Must be a number(s). This is inserted into the button in a style="width:npx" parameter. "n" is value.</comment>
+                    <validate>validate-length maximum-length-6 validate-digits validate-zero-or-greater</validate>
+                    <comment>Only digits greater than 0, no dots or comma. This is inserted into the button in a style="width:npx" parameter. "n" is value.</comment>
                 </field>
                 <field id="button_corners" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
                     <label>Corners</label>
@@ -105,7 +108,8 @@
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/button_width">custom-width</field>
                     </depends>
-                    <comment>Must be a number(s). This is inserted into the button in a style="width:npx" parameter. "n" is value.</comment>
+                    <validate>validate-length maximum-length-6 validate-digits validate-zero-or-greater</validate>
+                    <comment>Only digits greater than 0, no dots or comma. This is inserted into the button in a style="width:npx" parameter. "n" is value.</comment>
                 </field>
                 <field id="button_corners" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
                     <label>Corners</label>

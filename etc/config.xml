@@ -2,6 +2,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <rezolve_ic_button>
+            <general>
+                <merchant_id>0</merchant_id>
+            </general>
             <ic_button_on_product_page>
                 <enabled>0</enabled>
                 <button_colour>dark</button_colour>
