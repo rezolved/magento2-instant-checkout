@@ -2,15 +2,13 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <rezolve_ic_button>
-            <general>
-                <merchant_id>0</merchant_id>
-            </general>
             <ic_button_on_product_page>
                 <enabled>0</enabled>
                 <button_colour>dark</button_colour>
                 <button_height>height-large</button_height>
                 <button_corners>corner-round</button_corners>
                 <button_width>narrow</button_width>
+                <button_custom_width>140</button_custom_width>
             </ic_button_on_product_page>
             <ic_button_on_product_listing>
                 <enabled>0</enabled>
@@ -18,6 +16,7 @@
                 <button_height>height-large</button_height>
                 <button_corners>corner-round</button_corners>
                 <button_width>narrow</button_width>
+                <button_custom_width>140</button_custom_width>
             </ic_button_on_product_listing>
         </rezolve_ic_button>
     </default>
