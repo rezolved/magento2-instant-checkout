@@ -28,8 +28,8 @@
   },
   "repositories": [
     {
-      "type": "composer",
-      "url": "https://repo.magento.com/"
+      "type": "git",
+      "url": "https://github.com/rezolved/magento2-instant-checkout.git"
     }
   ]
 }
