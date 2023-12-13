@@ -3,15 +3,13 @@
 /** @var \Magento\Framework\Escaper $escaper */
 ?>
 <?php if ($block->isProductDetailEnabled() && $block->isAllowedProductType() && !empty($block->getMerchantId())): ?>
-<div class="rezolve-ic-button-wrapper <?= /* @noEscape */ $block->getNameInLayout(); ?>">
-    <rezolve-instant-checkout-button
-        type="buy"
-        merchant="<?= $escaper->escapeHtml($block->getMerchantId()); ?>"
-        external_id="<?= /* @noEscape */ $block->getProductId(); ?>"
-        class="instant-button <?= $escaper->escapeHtml($block->getClasses()); ?>"
-        button_style="<?= $escaper->escapeHtml($block->getProductButtonStyle()); ?>"
-        image_style="<?= $escaper->escapeHtml($block->getProductImageStyle()); ?>"
-        <?= $escaper->escapeHtml($block->getCustomWidthStyleValue()); ?>
-    ></rezolve-instant-checkout-button>
-</div>
+<rezolve-instant-checkout-button
+    type="buy"
+    merchant="<?= $escaper->escapeHtml($block->getMerchantId()); ?>"
+    external_id="<?= /* @noEscape */ $block->getProductId(); ?>"
+    class="instant-button <?= $escaper->escapeHtml($block->getClasses()); ?>"
+    button_style="<?= $escaper->escapeHtml($block->getProductButtonStyle()); ?>"
+    image_style="<?= $escaper->escapeHtml($block->getProductImageStyle()); ?>"
+    <?= /* @noEscape */ $block->getCustomWidthStyleValue(); ?>
+></rezolve-instant-checkout-button>
 <?php endif; ?>

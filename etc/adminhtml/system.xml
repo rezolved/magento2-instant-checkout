@@ -74,14 +74,14 @@
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
                 </field>
-                <field id="button_style" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_style" translate="label comment" type="textarea" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
                     <label>Button Style CSS</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
                     <comment>The Button Style CSS value controls the actual button. Example: height:13px;width:133px</comment>
                 </field>
-                <field id="image_style" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="image_style" translate="label comment" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
                     <label>Image Style CSS</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>

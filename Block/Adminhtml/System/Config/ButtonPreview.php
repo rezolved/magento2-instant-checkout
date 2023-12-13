@@ -110,27 +110,36 @@ class ButtonPreview extends Field
     {
         $buttonClasses = $this->getClasses($element);
         $directStyle = '';
+        $imgStyle = '';
         if ($this->getButtonPlace($element) === self::DETAIL_BUTTON_PREVIEW) {
             $colour = $this->config->getProductDetailButtonColour($this->getStoreId());
             $buttonWidth = $this->config->getProductDetailButtonWidth($this->getStoreId());
             $customWidthValue =  $this->config->getProductDetailCustomWidth($this->getStoreId());
+            $buttonStyle = $this->config->getProductDetailButtonStyle($this->getStoreId());
+            $imgStyleValue = $this->config->getProductDetailButtonImageStyle($this->getStoreId());
         } else {
             $colour = $this->config->getListingButtonColour($this->getStoreId());
             $buttonWidth = $this->config->getListingButtonWidth($this->getStoreId());
             $customWidthValue =  $this->config->getListingCustomWidth($this->getStoreId());
+            $buttonStyle = $this->config->getListingButtonStyle($this->getStoreId());
+            $imgStyleValue = $this->config->getListingButtonImageStyle($this->getStoreId());
         }
         $logoSrc = ($colour === 'dark') ? $this->getLogoSrcForDark() : $this->getLogoSrcForLight();
 
         if ($buttonWidth === ButtonWidth::CUSTOM_WIDTH && $customWidthValue > 0) {
             $directStyle .= 'width:' . $customWidthValue . 'px;';
         }
-        $buttonStyle = $this->config->getProductDetailButtonStyle($this->getStoreId());
+
         if (!empty($buttonStyle)) {
             $directStyle .= $buttonStyle;
         }
 
+        if ($imgStyleValue) {
+            $imgStyle = 'style="' . $imgStyleValue . '"';
+        }
+
         return '<button class="instant-button ' . $buttonClasses . '" type="button" style="' . $directStyle . '">' .
-            '<img alt="Rezolve Logo" src="' . $logoSrc . '" class="ml-2 mr-2 image_style" /></button>';
+            '<img alt="Rezolve Logo" src="' . $logoSrc . '" class="ml-2 mr-2 image_style" ' . $imgStyle . ' /></button>';
     }
 
     /**
