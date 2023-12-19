@@ -1,5 +1,5 @@
 {
-  "name": "rezolve_ai/magento2-instant-checkout",
+  "name": "rezolve/magento2-instant-checkout",
   "description": "Magento 2 Extension",
   "type": "magento2-module",
   "license": [
