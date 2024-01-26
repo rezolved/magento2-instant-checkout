@@ -1,3 +1,55 @@
+.radio-icons-list .row-field-option {
+    float: left;
+    margin-right: 10px;
+}
+.radio-icons-list .field-value {
+    float: right;
+    height: 20px;
+    padding-top: 8px;
+}
+
+.radio-icons-list .row-field-option label span {
+    overflow: hidden;
+    color:transparent;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.radio-icons-list .row-field-option .control-radio {
+    display: none;
+}
+.radio-icons-list .icon-button_width-narrow {
+    background: url(../images/button/width-narrow.svg) no-repeat 50% 50%;
+}
+.radio-icons-list .icon-button_width-wide {
+    background: url("../images/button/width-wide.svg") no-repeat 50% 50%;
+}
+.radio-icons-list .icon-button_width-custom-width {
+    background: url("../images/button/width-custom.svg") no-repeat 50% 50%;
+}
+.radio-icons-list .icon-button_corners-corner-round {
+    background: url(../images/button/corner-round.svg) no-repeat 50% 50%;
+}
+.radio-icons-list .icon-button_corners-corner-rounded {
+    background: url(../images/button/corner-rounded.svg) no-repeat 50% 50%;
+}
+.radio-icons-list .button_corners-corner-square {
+    background: url(../images/button/corner-square.svg) no-repeat 50% 50%;
+}
+.radio-icons-list .icon-button_colour-dark {
+    background: url(../images/button/colour-dark.svg) no-repeat 50% 50%;
+}
+.radio-icons-list .icon-button_colour-light {
+    background: url(../images/button/colour-light.svg) no-repeat 50% 50%;
+}
+.radio-icons-list .icon-button_height-height-small {
+    background: url(../images/button/height-small.svg) no-repeat 50% 50%;
+}
+.radio-icons-list .icon-button_height-height-large {
+    background: url(../images/button/height-large.svg) no-repeat 50% 50%;
+}
+
 .row-ic-button td.value {
     max-width: 300px;
     overflow-x: auto;
@@ -80,4 +132,7 @@
 }
 .row-ic-button .instant-button .ml-2 {
     margin-left: 0.5rem;
+}
+.radio-icons-list .row-field-option .control-radio:checked + label span {
+    border: 1px dotted #041f63;
 }

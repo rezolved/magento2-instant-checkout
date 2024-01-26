@@ -21,67 +21,71 @@
                     <comment>Only digits greater than 0, no dots or comma. For example: 9561 or 132498765.</comment>
                 </field>
             </group>
-            <group id="ic_button_on_product_page" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+            <group id="ic_button_on_product_page" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Product Detail Page</label>
-                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="button_width" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_width" translate="label comment" type="Rezolve\InstantCheckout\Block\Adminhtml\System\Element\RadioIcons" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="0">
                     <label>Width</label>
                     <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonWidth</source_model>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonRadioField</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
                     <comment>The horizontal size of the button.</comment>
                 </field>
-                <field id="button_custom_width" translate="label comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_custom_width" translate="label comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Custom Width</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/button_width">custom-width</field>
                     </depends>
                     <validate>validate-length maximum-length-6 validate-digits validate-zero-or-greater</validate>
-                    <comment>Only digits greater than 0, no dots or comma. This is inserted into the button in a style="width:npx" parameter. "n" is value.</comment>
+                    <comment>Before preview it - save! Only digits greater than 0, no dots or comma. This is inserted into the button in a style="width:npx" parameter. "n" is value.</comment>
                 </field>
-                <field id="button_corners" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_corners" translate="label comment" type="Rezolve\InstantCheckout\Block\Adminhtml\System\Element\RadioIcons" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="0">
                     <label>Corners</label>
                     <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonCorners</source_model>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonRadioField</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
                     <comment>The style of the corners.</comment>
                 </field>
-                <field id="button_colour" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_colour" translate="label comment" type="Rezolve\InstantCheckout\Block\Adminhtml\System\Element\RadioIcons" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="0">
                     <label>Colour</label>
                     <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonColour</source_model>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonRadioField</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
                     <comment>The colour scheme of the button.</comment>
                 </field>
-                <field id="button_height" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_height" translate="label comment" type="Rezolve\InstantCheckout\Block\Adminhtml\System\Element\RadioIcons" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="0">
                     <label>Height</label>
                     <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonHeight</source_model>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonRadioField</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
                     <comment>The vertical size of the button.</comment>
                 </field>
-                <field id="button_detail_preview" translate="label comment" type="button" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="button_detail_preview" translate="label comment" type="button" sortOrder="45" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Preview Style</label>
                     <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonPreview</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
                 </field>
-                <field id="button_style" translate="label comment" type="textarea" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_style" translate="label comment" type="textarea" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Button Style CSS</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
                     </depends>
                     <comment>The Button Style CSS value controls the actual button. Example: height:13px;width:133px</comment>
                 </field>
-                <field id="image_style" translate="label comment" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="image_style" translate="label comment" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Image Style CSS</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_page/enabled">1</field>
@@ -89,21 +93,22 @@
                     <comment>The Image Style CSS value controls the appearance of the ‘BUY NOW’ image label. Example: height:13px;width:133px</comment>
                 </field>
             </group>
-            <group id="ic_button_on_product_listing" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+            <group id="ic_button_on_product_listing" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Product Listing Page</label>
-                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="button_width" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_width" translate="label comment" type="Rezolve\InstantCheckout\Block\Adminhtml\System\Element\RadioIcons" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="0">
                     <label>Width</label>
                     <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonWidth</source_model>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonRadioField</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
                     </depends>
                     <comment>The horizontal size of the button.</comment>
                 </field>
-                <field id="button_custom_width" translate="label comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_custom_width" translate="label comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Custom Width</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/button_width">custom-width</field>
@@ -111,45 +116,48 @@
                     <validate>validate-length maximum-length-6 validate-digits validate-zero-or-greater</validate>
                     <comment>Only digits greater than 0, no dots or comma. This is inserted into the button in a style="width:npx" parameter. "n" is value.</comment>
                 </field>
-                <field id="button_corners" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_corners" translate="label comment" type="Rezolve\InstantCheckout\Block\Adminhtml\System\Element\RadioIcons" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="0">
                     <label>Corners</label>
                     <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonCorners</source_model>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonRadioField</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
                     </depends>
                     <comment>The style of the corners.</comment>
                 </field>
-                <field id="button_colour" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_colour" translate="label comment" type="Rezolve\InstantCheckout\Block\Adminhtml\System\Element\RadioIcons" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="0">
                     <label>Colour</label>
                     <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonColour</source_model>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonRadioField</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
                     </depends>
                     <comment>The colour scheme of the button.</comment>
                 </field>
-                <field id="button_height" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_height" translate="label comment" type="Rezolve\InstantCheckout\Block\Adminhtml\System\Element\RadioIcons" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="0">
                     <label>Height</label>
                     <source_model>Rezolve\InstantCheckout\Model\Config\Source\ButtonHeight</source_model>
+                    <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonRadioField</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
                     </depends>
                     <comment>The vertical size of the button.</comment>
                 </field>
-                <field id="button_listing_preview" translate="label comment" type="button" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="button_listing_preview" translate="label comment" type="button" sortOrder="45" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Preview Style</label>
                     <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\ButtonPreview</frontend_model>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
                     </depends>
                 </field>
-                <field id="button_style" translate="label comment" type="textarea" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="button_style" translate="label comment" type="textarea" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Button Style CSS</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>
                     </depends>
                     <comment>The Button Style CSS value controls the actual button. Example: height:13px;width:133px</comment>
                 </field>
-                <field id="image_style" translate="label comment" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="image_style" translate="label comment" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Image Style CSS</label>
                     <depends>
                         <field id="rezolve_ic_button/ic_button_on_product_listing/enabled">1</field>

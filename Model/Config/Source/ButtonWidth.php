@@ -6,8 +6,9 @@ namespace Rezolve\InstantCheckout\Model\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 
-class ButtonWidth implements OptionSourceInterface
+class   ButtonWidth implements OptionSourceInterface
 {
+    public const BUTTON_NAME = 'width';
     public const VALUE_NARROW = 'narrow';
     public const VALUE_WIDE = 'wide';
     public const CUSTOM_WIDTH = 'custom-width';

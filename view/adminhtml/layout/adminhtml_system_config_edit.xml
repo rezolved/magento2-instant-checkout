@@ -2,5 +2,6 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="Rezolve_InstantCheckout::css/button-styles.css" media='screen' rel='stylesheet' type='text/css' />
+        <link src="Rezolve_InstantCheckout::js/radio-button.js"/>
     </head>
 </page>

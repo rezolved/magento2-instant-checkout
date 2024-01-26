@@ -167,6 +167,11 @@ class ButtonPreview extends Field
      */
     protected function _decorateRowHtml(AbstractElement $element, $html)
     {
-        return '<tr id="row_' . $element->getHtmlId() . '" class="row-ic-button">' . $html . '</tr>';
+        return '<tr id="row_' . $element->getHtmlId() . '" class="row-ic-button">' .
+            '<script>' .
+            'window.rezolveBtnLightSrc = \''. $this->getLogoSrcForLight(). '\';' .
+            'window.rezolveBtnDarkSrc = \''. $this->getLogoSrcForDark(). '\';' .
+            '</script>' .
+            $html . '</tr>';
     }
 }
