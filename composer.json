@@ -1,6 +1,6 @@
 {
   "name": "rezolve_ai/magento2-instant-checkout",
-  "description": "Magento 2 Extension",
+  "description": "Magento 2 Extension, https://github.com/rezolved/magento2-instant-checkout",
   "type": "magento2-module",
   "license": [
     "proprietary"
