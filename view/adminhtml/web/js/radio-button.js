@@ -45,6 +45,7 @@ require([
         if (btnType === 'button_colour') {
             if (btnLightSrc && btnDarkSrc) {
                 buttonImage.attr('src', (btnValue === 'light') ? btnLightSrc : btnDarkSrc);
+                buttonImage.show(0);
             } else {
                 console.error('There is no button image source.');
             }
