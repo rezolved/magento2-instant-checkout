@@ -9,7 +9,7 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class InstalledVersionField extends Field
 {
-    public const INSTALLED_VERSION = '1.0.0';
+    public const INSTALLED_VERSION = '1.0.1';
 
     /**
      * @param AbstractElement $element

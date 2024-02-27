@@ -16,9 +16,9 @@
                     <frontend_model>Rezolve\InstantCheckout\Block\Adminhtml\System\Config\InstalledVersionField</frontend_model>
                 </field>
                 <field id="merchant_id" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Merchant ID</label>
+                    <label>Rezolve Merchant ID</label>
                     <validate>validate-length maximum-length-11 validate-digits validate-zero-or-greater</validate>
-                    <comment>Only digits greater than 0, no dots or comma. For example: 9561 or 132498765.</comment>
+                    <comment>Please talk to your Rezolve Account Manager to receive your Rezolve Merchant ID. Only digits greater than 0, no dots or comma. For example: 9561 or 132498765.</comment>
                 </field>
             </group>
             <group id="ic_button_on_product_page" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
