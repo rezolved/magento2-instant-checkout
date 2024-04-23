@@ -44,10 +44,10 @@ class HeaderCode extends Template
     {
         $env = $this->getRezolveEnvironment();
         return match ($env) {
-            'development' => 'https://instantweb-cdn.dev.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
-            'staging' => 'https://instantweb-cdn.stg.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
-            'production' => 'https://instantweb-cdn.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
-            'demo' => 'https://instantweb-cdn.demo.eu.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
+            'development' => 'https://instantweb-cdn.dev.eu2.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
+            'staging' => 'https://instantweb-cdn.stg.eu2.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
+            'production' => 'https://instantweb-cdn.eu2.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
+            'demo' => 'https://instantweb-cdn.demo.eu2.rezolve.com/icv2-web-components/ic-web-components/ic-web-components.esm.js',
             default => '',
         };
     }
